@@ -7,9 +7,9 @@ import sys
 # input for the actions are converted to names of a specific format by GitHub
 INPUT_KEYS_MAP = {
     "key": "INPUT_KEY",
-    "coverage_file": "INPUT_COVERAGEFILE",
+    "coverage_file": "INPUT_COVERAGE-FILE",
     "dsn": "INPUT_DSN",
-    "fail_ci_on_error": "INPUT_FAILCIONERROR",
+    "fail_ci_on_error": "INPUT_FAIL-CI-ON-ERROR",
 }
 
 DEEPSOURCE_CLI_PATH = "./bin/deepsource"
@@ -27,7 +27,7 @@ def main() -> None:
     input_data = {key: os.getenv(value) for key, value in INPUT_KEYS_MAP.items()}
 
     command = [
-        {DEEPSOURCE_CLI_PATH},
+        DEEPSOURCE_CLI_PATH,
         "--analyzer",
         DEEPSOURCE_TEST_COVERAGE_ANALYZER_SHORTCODE,
         "--key",
