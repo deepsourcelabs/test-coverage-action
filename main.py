@@ -16,7 +16,7 @@ DEEPSOURCE_CLI_PATH = "/app/bin/deepsource"
 
 DEEPSOURCE_TEST_COVERAGE_ANALYZER_SHORTCODE = "test-coverage"
 
-GITHUB_WORKSPACE_PATH = os.environ.get('GITHUB_WORKSPACE')
+GITHUB_WORKSPACE_PATH = os.environ.get("GITHUB_WORKSPACE")
 
 
 def main() -> None:
