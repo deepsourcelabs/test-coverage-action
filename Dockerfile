@@ -8,7 +8,7 @@ WORKDIR /app
 
 # install curl
 RUN apt-get update
-RUN apt-get install curl
+RUN apt-get install -y curl
 
 # download the DeepSource CLI binary
 RUN curl https://deepsource.io/cli | sh
