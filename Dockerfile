@@ -8,5 +8,6 @@ WORKDIR /app
 
 # download the DeepSource CLI binary
 RUN curl https://deepsource.io/cli | sh
+RUN ["chmod", "+x", "777", "/app/main.py"]
 
 CMD ["/app/main.py"]
