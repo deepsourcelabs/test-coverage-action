@@ -12,7 +12,7 @@ inputs:
     description: 'DeepSource DSN of this repository. It is available under Settings → Reporting tab of the repository page on DeepSource.'
     required: true
   fail-ci-on-error:
-    description: 'Should the CI build fail if there/'s an error while uploading the report to DeepSource? Allowed values are — true, false'
+    description: 'Should the CI build fail if there is an error while uploading the report to DeepSource? Allowed values are — true, false'
     default: false
 branding:
   color: 'green'
