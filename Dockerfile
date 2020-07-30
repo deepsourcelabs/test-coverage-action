@@ -6,8 +6,12 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ADD . /app
 WORKDIR /app
 
+# install curl
+RUN apt-get update
+RUN apt-get install curl
+
 # download the DeepSource CLI binary
 RUN curl https://deepsource.io/cli | sh
-RUN ["chmod", "+x", "777", "/app/main.py"]
+RUN ["chmod", "777", "/app/main.py"]
 
 CMD ["/app/main.py"]
