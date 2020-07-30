@@ -16,6 +16,8 @@ DEEPSOURCE_CLI_PATH = "/app/bin/deepsource"
 
 DEEPSOURCE_TEST_COVERAGE_ANALYZER_SHORTCODE = "test-coverage"
 
+GITHUB_WORKSPACE_PATH = '/github/workspace'
+
 
 def main() -> None:
     """
@@ -36,6 +38,9 @@ def main() -> None:
         "--value-file",
         input_data["coverage_file"],
     ]
+
+    # change the current working directory to the GitHub repository's context
+    os.chdir(GITHUB_WORKSPACE_PATH)
 
     process = subprocess.run(
         command,
