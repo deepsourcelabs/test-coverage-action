@@ -12,7 +12,7 @@ INPUT_KEYS_MAP = {
     "fail_ci_on_error": "INPUT_FAIL-CI-ON-ERROR",
 }
 
-DEEPSOURCE_CLI_PATH = "./app/bin/deepsource"
+DEEPSOURCE_CLI_PATH = "/app/bin/deepsource"
 
 DEEPSOURCE_TEST_COVERAGE_ANALYZER_SHORTCODE = "test-coverage"
 
