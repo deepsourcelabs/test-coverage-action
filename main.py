@@ -18,6 +18,10 @@ DEEPSOURCE_TEST_COVERAGE_ANALYZER_SHORTCODE = "test-coverage"
 
 GITHUB_WORKSPACE_PATH = os.environ.get('GITHUB_WORKSPACE')
 
+files = os.listdir(GITHUB_WORKSPACE_PATH)
+
+print(files)
+
 
 def main() -> None:
     """
