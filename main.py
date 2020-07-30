@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
 import subprocess
@@ -28,6 +27,7 @@ def main() -> None:
 
     command = [
         DEEPSOURCE_CLI_PATH,
+        "report",
         "--analyzer",
         DEEPSOURCE_TEST_COVERAGE_ANALYZER_SHORTCODE,
         "--key",
