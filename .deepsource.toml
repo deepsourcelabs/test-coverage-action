@@ -1,0 +1,18 @@
+version = 1
+
+[[analyzers]]
+name = 'python'
+enabled = true
+
+  [analyzers.meta]
+  max_line_length = 100
+  skip_doc_coverage = ["module", "magic", "class"]
+  runtime_version = '3.x.x'
+
+[[analyzers]]
+name = "docker"
+enabled = true
+
+[[transformers]]
+name = 'black'
+enabled = true
