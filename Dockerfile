@@ -3,15 +3,15 @@ ENV PYTHONPATH /app
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-ADD . /app
+COPY . /app
 WORKDIR /app
 
-# install curl
-RUN apt-get update
-RUN apt-get install -y curl git
+# install curl; skipcq: DOK-DL3008
+RUN apt-get update && apt-get install -y curl git && apt-get clean && rm -rf /var/lib/apt/lists/*
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # download the DeepSource CLI binary
-RUN curl https://deepsource.io/cli | sh
+RUN curl https://deepsource.io/cli | bash
 RUN ["chmod", "777", "/app/main.py"]
 
 CMD ["/app/main.py"]

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-import subprocess
+import subprocess  # skipcq: BAN-B404
 import sys
 
 # input for the actions are converted to names of a specific format by GitHub
@@ -42,6 +42,7 @@ def main() -> None:
     # change the current working directory to the GitHub repository's context
     os.chdir(GITHUB_WORKSPACE_PATH)
 
+    # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
         command,
         env=dict(os.environ, DEEPSOURCE_DSN=input_data["dsn"]),
