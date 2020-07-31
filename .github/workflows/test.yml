@@ -1,0 +1,12 @@
+name: Docker Build Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Build Docker container
+        uses: docker/build-action@v1.1.0
+        with:
+          repository: deepsourcelabs/test-coverage-action
+          tags: latest
