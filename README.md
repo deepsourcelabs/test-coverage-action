@@ -2,9 +2,9 @@
 
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/deepsourcelabs/test-coverage-action/?ref=repository-badge)
 
-GitHub Action that enables you to upload your test coverage data to DeepSource easily. You must have the [Test Coverage](https://deepsource.io/docs/analyzer/test-coverage.html) analyzer enabled on your repository for reporting to work. Please refer to the [.deepsource.toml configuration reference](https://deepsource.io/docs/config/deepsource-toml.html#analyzers) for details.
+GitHub Action that enables you to upload your test coverage data to DeepSource easily. You must have the [Test Coverage](https://deepsource.io/docs/analyzer/test-coverage.html?utm_source=githubmarketplace&utm_medium=organic) analyzer enabled on your repository for reporting to work. Please refer to the [.deepsource.toml configuration reference](https://deepsource.io/docs/config/deepsource-toml.html?utm_source=githubmarketplace&utm_medium=organic#analyzers) for details.
 
-If you're not using DeepSource yet, [get started for free](https://deepsource.io/signup).
+If you're not using DeepSource yet, [get started for free](https://deepsource.io/signup?utm_source=githubmarketplace&utm_medium=organic).
 
 
 ## Usage
