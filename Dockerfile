@@ -20,4 +20,7 @@ RUN ["chmod", "777", "/app/main.py"]
 
 USER main
 
+# Change terminal to show output of the CLI
+RUN export TERM=xterm
+
 CMD ["/app/main.py"]
