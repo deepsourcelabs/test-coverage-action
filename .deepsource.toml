@@ -16,3 +16,7 @@ enabled = true
 [[transformers]]
 name = 'black'
 enabled = true
+
+[[analyzers]]
+name = "secrets"
+enabled = true
