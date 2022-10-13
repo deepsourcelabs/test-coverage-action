@@ -14,6 +14,9 @@ inputs:
   fail-ci-on-error:
     description: 'Should the CI build fail if there is an error while uploading the report to DeepSource? Allowed values are — true, false'
     default: false
+outputs:
+  cli_response:
+    description: 'Response from the DeepSource CLI'
 branding:
   color: 'green'
   icon: 'umbrella'
