@@ -2,6 +2,7 @@ FROM python:3.8.7-slim-buster
 ENV PYTHONPATH /app
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
+ENV TERM xterm
 
 RUN groupadd --gid 5000 main \
     && useradd --home-dir /home/main --create-home --uid 5000 \
