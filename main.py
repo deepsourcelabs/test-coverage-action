@@ -28,7 +28,10 @@ def main() -> None:
 
     input_data = {key: os.getenv(value) for key, value in INPUT_KEYS_MAP.items()}
     print(GITHUB_WORKSPACE_PATH)
-
+    cd = os.system("")
+    commit = os.system("cd /github/workspace && git --no-pager rev-parse HEAD")
+    print("commit_sha = %d" % commit)
+    
     command = [
         DEEPSOURCE_CLI_PATH,
         "report",
