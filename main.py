@@ -28,7 +28,7 @@ def main() -> None:
 
     input_data = {key: os.getenv(value) for key, value in INPUT_KEYS_MAP.items()}
     print(GITHUB_WORKSPACE_PATH)
-    print(os.system("git config --global --add safe.directory /github/workspace"))
+    print(os.system("sudo git config --global --add safe.directory /github/workspace"))
 
     command = [
         DEEPSOURCE_CLI_PATH,
