@@ -31,7 +31,7 @@ def main() -> None:
     cd = os.system("")
     commit = os.system("cd /github/workspace && git --no-pager rev-parse HEAD")
     print("commit_sha = %d" % commit)
-    
+
     command = [
         DEEPSOURCE_CLI_PATH,
         "report",
