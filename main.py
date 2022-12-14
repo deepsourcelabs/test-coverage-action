@@ -27,7 +27,8 @@ def main() -> None:
     """
 
     input_data = {key: os.getenv(value) for key, value in INPUT_KEYS_MAP.items()}
-
+    print(GITHUB_WORKSPACE_PATH)
+    
     command = [
         DEEPSOURCE_CLI_PATH,
         "report",
