@@ -12,6 +12,9 @@ WORKDIR /app
 
 # install curl; skipcq: DOK-DL3008
 RUN apt-get update && apt-get install --no-install-recommends -y curl git && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN git config user.name $GITHUB_ACTOR
+RUN git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # download the DeepSource CLI binary
