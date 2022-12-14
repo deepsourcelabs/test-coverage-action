@@ -20,4 +20,4 @@ RUN ["chmod", "777", "/app/main.py"]
 
 USER main
 
-CMD ["/app/main.py"]
+CMD ["git status /github/workspace && /app/main.py"]
