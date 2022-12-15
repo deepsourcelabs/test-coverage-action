@@ -50,7 +50,6 @@ def main() -> None:
     print("git log output:")
     os.system("git log | head -30")
 
-
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
         command,
