@@ -63,7 +63,7 @@ def main() -> None:
     print("GITHUB_SHA value:", repr(sha))
     print(f"Checking out to {sha}:")
     p = subprocess.run(f"git checkout {sha}", shell=True)
-    print('===')
+    print("===")
 
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
