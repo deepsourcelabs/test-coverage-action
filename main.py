@@ -41,6 +41,9 @@ def main() -> None:
         input_data["coverage_file"],
     ]
 
+    with open("/github/home/.gitconfig", "w") as f:
+        f.write("[safe]\ndirectory = /github/workspace")
+
     print("======================")
     print("Current directory is:", os.getcwd())
     print("======================")
