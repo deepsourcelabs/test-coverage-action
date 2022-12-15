@@ -44,6 +44,11 @@ def main() -> None:
     # change the current working directory to the GitHub repository's context
     os.chdir(GITHUB_WORKSPACE_PATH)
 
+    p = subprocess.run(
+        ["git", "status"],
+        capture_output=True,
+    )
+
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
         command,
@@ -55,6 +60,9 @@ def main() -> None:
         if input_data["fail_ci_on_error"] == "true":
             print(f"::error file:main.py::{process.stdout.decode('utf-8')}")
             sys.exit(1)
+
+    print(p.stdout.decode("utf-8"))
+    print(p.stderr.decode("utf-8"), file=sys.stderr)
 
     print(process.stdout.decode("utf-8"))
     print(process.stderr.decode("utf-8"), file=sys.stderr)
