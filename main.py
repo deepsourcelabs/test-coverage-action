@@ -51,6 +51,11 @@ def main() -> None:
     print("git log output:")
     p = subprocess.run("git log | head -30", shell=True, capture_output=True)
     print(p.stdout.decode(), "***")
+    print("git rev-list output:")
+    p = subprocess.run("git rev-list --all --max-count=10 --reverse --pretty", shell=True, capture_output=True)
+    print(p.stdout.decode(), "***")
+    print("GITHUB_REF value:", repr(os.getenv("GITHUB_REF")))
+
 
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
