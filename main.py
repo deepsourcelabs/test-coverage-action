@@ -59,6 +59,11 @@ def main() -> None:
     )
     print(p.stdout.decode(), "***")
     print("GITHUB_REF value:", repr(os.getenv("GITHUB_REF")))
+    sha = os.getenv("GITHUB_SHA")
+    print("GITHUB_SHA value:", repr(sha))
+    print(f"Checking out to {sha}:")
+    p = subprocess.run(f"git checkout {sha}", shell=True)
+    print('===')
 
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
