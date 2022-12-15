@@ -61,9 +61,16 @@ def main() -> None:
     print("GITHUB_REF value:", repr(os.getenv("GITHUB_REF")))
     sha = os.getenv("GITHUB_SHA")
     print("GITHUB_SHA value:", repr(sha))
+    print("Doing the dubious thing")
+    p = subprocess.run("git config --global --add safe.directory /github/workspace", shell=True, capture_output=True)
+    print("Out:", p.stdout.decode())
+    print("Err:", p.stderr.decode())
+    print('===')
     print(f"Checking out to {sha}:")
-    p = subprocess.run(f"git checkout {sha}", shell=True)
-    print("===")
+    p = subprocess.run(f"git checkout {sha}", shell=True, capture_output=True)
+    print("Out:", p.stdout.decode())
+    print("Err:", p.stderr.decode())
+    print('===')
 
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
