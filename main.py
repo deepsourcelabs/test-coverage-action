@@ -42,6 +42,7 @@ def main() -> None:
     ]
 
     print("======================")
+    print("Current directory is:", os.getcwd())
     print("Changing directory to", GITHUB_WORKSPACE_PATH)
     # change the current working directory to the GitHub repository's context
     os.chdir(GITHUB_WORKSPACE_PATH)
