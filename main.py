@@ -48,7 +48,8 @@ def main() -> None:
 
     print("======================")
     print("git log output:")
-    os.system("git log | head -30")
+    p = subprocess.run("git log | head -30", shell=True, capture_output=True)
+    print(p.stdout.decode())
 
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
