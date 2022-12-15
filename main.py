@@ -49,7 +49,7 @@ def main() -> None:
     print("======================")
     print("git log output:")
     p = subprocess.run("git log | head -30", shell=True, capture_output=True)
-    print(p.stdout.decode())
+    print(p.stdout.decode(), "***")
 
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
