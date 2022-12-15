@@ -41,13 +41,15 @@ def main() -> None:
         input_data["coverage_file"],
     ]
 
+    print("======================")
+    print("Changing directory to", GITHUB_WORKSPACE_PATH)
     # change the current working directory to the GitHub repository's context
     os.chdir(GITHUB_WORKSPACE_PATH)
 
-    p = subprocess.run(
-        ["git", "config", "--global", "--add", "safe.directory", "'*'"],
-        capture_output=True,
-    )
+    print("======================")
+    print("git log output:")
+    os.system("git log | head -30")
+
 
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
@@ -61,9 +63,8 @@ def main() -> None:
             print(f"::error file:main.py::{process.stdout.decode('utf-8')}")
             sys.exit(1)
 
-    print(p.stdout.decode("utf-8"))
-    print(p.stderr.decode("utf-8"), file=sys.stderr)
-
+    print("======================")
+    print("DeepSource CLI output:")
     print(process.stdout.decode("utf-8"))
     print(process.stderr.decode("utf-8"), file=sys.stderr)
 
