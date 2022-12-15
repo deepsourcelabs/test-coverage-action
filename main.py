@@ -55,7 +55,7 @@ def main() -> None:
             sys.exit(1)
 
     print(process.stdout.decode("utf-8"))
-    print(process.err.decode("utf-8"), file=sys.stderr)
+    print(process.stderr.decode("utf-8"), file=sys.stderr)
 
 
 if __name__ == "__main__":
