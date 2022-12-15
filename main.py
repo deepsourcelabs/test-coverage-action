@@ -43,21 +43,29 @@ def main() -> None:
 
     print("======================")
     print("Current directory is:", os.getcwd())
-    print("Changing directory to", GITHUB_WORKSPACE_PATH)
-    # change the current working directory to the GitHub repository's context
-    os.chdir(GITHUB_WORKSPACE_PATH)
-
+    print("======================")
+    print("cat home config:")
+    p = subprocess.run("cat /github/home/.gitconfig", shell=True, capture_output=True)
+    print("Out:", p.stdout.decode())
+    print("Err:", p.stderr.decode())
+    print("======================")
+    print("git global config output:")
+    p = subprocess.run("git config --global -l", shell=True, capture_output=True)
+    print("Out:", p.stdout.decode())
+    print("Err:", p.stderr.decode())
     print("======================")
     print("git log output:")
     p = subprocess.run("git log | head -30", shell=True, capture_output=True)
-    print(p.stdout.decode(), "***")
+    print("Out:", p.stdout.decode())
+    print("Err:", p.stderr.decode())
     print("git rev-list output:")
     p = subprocess.run(
         "git rev-list --all --max-count=10 --reverse --pretty",
         shell=True,
         capture_output=True,
     )
-    print(p.stdout.decode(), "***")
+    print("Out:", p.stdout.decode())
+    print("Err:", p.stderr.decode())
     print("GITHUB_REF value:", repr(os.getenv("GITHUB_REF")))
     sha = os.getenv("GITHUB_SHA")
     print("GITHUB_SHA value:", repr(sha))
