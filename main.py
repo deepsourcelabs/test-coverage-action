@@ -63,7 +63,7 @@ def main() -> None:
     print("GITHUB_SHA value:", repr(sha))
     print("Doing the dubious thing")
     p = subprocess.run(
-        "git config --global --add safe.directory /github/workspace",
+        "git config --add safe.directory /github/workspace",
         shell=True,
         capture_output=True,
     )
