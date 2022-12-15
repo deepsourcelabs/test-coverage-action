@@ -51,11 +51,8 @@ def main() -> None:
 
     if process.returncode != 0:
         if input_data["fail_ci_on_error"] == "true":
-            print(f"::error file:main.py::{process.stdout.decode('utf-8')}")
+            print(f"::error file:main.py::{process.stdout}")
             sys.exit(1)
-
-    print(process.stdout.decode("utf-8"))
-    print(process.err.decode("utf-8"), file=sys.stderr)
 
 
 if __name__ == "__main__":
