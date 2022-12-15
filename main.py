@@ -45,7 +45,7 @@ def main() -> None:
     os.chdir(GITHUB_WORKSPACE_PATH)
 
     p = subprocess.run(
-        ["git", "status"],
+        ["git", "config", "--global", "--add", "safe.directory", "'*'"],
         capture_output=True,
     )
 
