@@ -1,14 +1,10 @@
 # DeepSource Test Coverage Action
 
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/deepsourcelabs/test-coverage-action/?ref=repository-badge)
-
 GitHub Action that enables you to upload your test coverage data to DeepSource easily. You must have the [Test Coverage](https://deepsource.io/docs/analyzer/test-coverage.html?utm_source=githubmarketplace&utm_medium=organic) analyzer enabled on your repository for reporting to work. Please refer to the [.deepsource.toml configuration reference](https://deepsource.io/docs/config/deepsource-toml.html?utm_source=githubmarketplace&utm_medium=organic#analyzers) for details.
 
-If you're not using DeepSource yet, [get started for free](https://deepsource.io/signup?utm_source=githubmarketplace&utm_medium=organic).
+# ⚠️ Deprecation Notice ⚠
 
-## Notice
-
-If you’re using the Test coverage action, we recommend switching to using the DeepSource CLI directly.
+This GitHub Action is deprecated and is not maintained anymore. We recommend switching to using the DeepSource CLI directly.
 To do this, rather than using the `test-coverage-action` step, you can do the following:
 
 ```yaml
@@ -29,7 +25,9 @@ steps:
       ./bin/deepsource report --analyzer test-coverage --key <language> --value-file <path/to/coverage/file>
 ```
 
-If you want to continue using the Test coverage action, please add a step before the test coverage action, to add a
+[Link to Test Coverage documentation ->](https://docs.deepsource.com/docs/analyzers-test-coverage)
+
+If you are existing user of the test coverage action and would like to continue using it, please add a step before the test coverage action, to add a
 `safe.directory` parameter to your `.gitconfig`:
 
 ```yaml
