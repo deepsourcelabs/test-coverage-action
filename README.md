@@ -45,7 +45,7 @@ steps:
       printf "[safe]\ndirectory = /github/workspace" > /home/runner/work/_temp/_github_home/.gitconfig
 
   - name: Report test-coverage to DeepSource
-    uses: deepsourcelabs/test-coverage-action@master
+    uses: DeepSourceCorp/test-coverage-action@master
     with:
       ... The rest of your config is explained in Usage section.
 ```
@@ -61,7 +61,7 @@ Ensure that you have added the `DEEPSOURCE_DSN` secret in your GitHub repository
 ```yaml
 steps:
   - name: Report test coverage to DeepSource
-    uses: deepsourcelabs/test-coverage-action@master
+    uses: DeepSourceCorp/test-coverage-action@master
     with:
       key: python
       coverage-file: coverage.xml
