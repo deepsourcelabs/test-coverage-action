@@ -1,6 +1,6 @@
 # DeepSource Test Coverage Action
 
-GitHub Action that enables you to upload your test coverage data to DeepSource easily. You must have the [Test Coverage](https://deepsource.io/docs/analyzer/test-coverage.html?utm_source=githubmarketplace&utm_medium=organic) analyzer enabled on your repository for reporting to work. Please refer to the [.deepsource.toml configuration reference](https://deepsource.io/docs/config/deepsource-toml.html?utm_source=githubmarketplace&utm_medium=organic#analyzers) for details.
+GitHub Action that enables you to upload your test coverage data to DeepSource easily. You must have the [Test Coverage](https://docs.deepsource.com/docs/analyzers-test-coverage) analyzer enabled on your repository for reporting to work. Please refer to the [.deepsource.toml configuration reference](https://docs.deepsource.com/docs/configuration) for details.
 
 # ⚠️ Deprecation Notice ⚠
 
