@@ -72,7 +72,8 @@ steps:
 
 The possible inputs to this action are:
 
-* `key` (string, **required**): Programming language shortcode for which coverage is reported. Allowed values are: `python`, `go`.
+* `key` (string, **required**): Programming language shortcode for which coverage is reported. e.g. `python`, `go`, `javascript`.
+  See [the docs](https://docs.deepsource.com/docs/analyzers-test-coverage#reporting-coverage-artifact-using-the-cli) for the current list of allowed values.
 * `coverage-file` (string, **required**): Path to the coverage data file. e. g. `coverage.xml`
 * `dsn` (string, **required**): DeepSource DSN of this repository.
 * `fail-ci-on-error` (boolean): Should the CI build fail if there is an error while uploading the report to DeepSource? Allowed values are: `true`, `false`. This is set to `false` by default.
