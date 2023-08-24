@@ -10,7 +10,7 @@ INPUT_KEYS_MAP = {
     "coverage_file": "INPUT_COVERAGE-FILE",
     "dsn": "INPUT_DSN",
     "fail_ci_on_error": "INPUT_FAIL-CI-ON-ERROR",
-    "commit_sha": "INPUT_COMMIT-SHA"
+    "commit_sha": "INPUT_COMMIT-SHA",
 }
 
 DEEPSOURCE_CLI_PATH = "/app/bin/deepsource"
