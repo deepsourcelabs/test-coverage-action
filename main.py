@@ -10,6 +10,7 @@ INPUT_KEYS_MAP = {
     "coverage_file": "INPUT_COVERAGE-FILE",
     "dsn": "INPUT_DSN",
     "fail_ci_on_error": "INPUT_FAIL-CI-ON-ERROR",
+    "commit_sha": "INPUT_COMMIT-SHA",
 }
 
 DEEPSOURCE_CLI_PATH = "/app/bin/deepsource"
@@ -45,7 +46,11 @@ def main() -> None:
     # skipcq: BAN-B603, PYL-W1510
     process = subprocess.run(
         command,
-        env=dict(os.environ, DEEPSOURCE_DSN=input_data["dsn"]),
+        env=dict(
+            os.environ,
+            DEEPSOURCE_DSN=input_data["dsn"],
+            GHA_HEAD_COMMIT_SHA=input_data["commit_sha"],
+        ),
         capture_output=True,
     )
 
