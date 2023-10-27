@@ -28,6 +28,20 @@ def main() -> None:
     """
 
     input_data = {key: os.getenv(value) for key, value in INPUT_KEYS_MAP.items()}
+    commit_sha = input_data["commit_sha"]
+
+    # Case: When user hasn't set the commit sha
+    # or, when this action is run on a non-pull request event, the default value is going to
+    # be an empty string.
+    # in such case, fetch commit sha from the `GITHUB_SHA` environment variable.
+    # Doing this is the best way to go because of the following reasons:
+    # 1. we don't have to run any git commands to fetch the commit sha,
+    # making the action work all the time
+    # 2. the default being set to PR's head sha will take care of merge commit.
+    # In all other cases, GITHUB_SHA would be accurate.
+    # 3. GITHUB_SHA is always set, so we don't have to worry about it being empty.
+    if not commit_sha:
+        commit_sha = os.getenv("GITHUB_SHA")
 
     command = [
         DEEPSOURCE_CLI_PATH,
@@ -49,7 +63,7 @@ def main() -> None:
         env=dict(
             os.environ,
             DEEPSOURCE_DSN=input_data["dsn"],
-            GHA_HEAD_COMMIT_SHA=input_data["commit_sha"],
+            GHA_HEAD_COMMIT_SHA=commit_sha,
         ),
         capture_output=True,
     )
