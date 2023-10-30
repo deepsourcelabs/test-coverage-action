@@ -6,53 +6,6 @@ GitHub Action that enables you to upload your test coverage data to DeepSource e
 
 If you're not using DeepSource yet, [get started for free](https://deepsource.io/signup?utm_source=githubmarketplace&utm_medium=organic).
 
-## Notice
-
-If you’re using the Test coverage action, we recommend switching to using the DeepSource CLI directly.
-To do this, rather than using the `test-coverage-action` step, you can do the following:
-
-```yaml
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v2
-    with:
-      ref: ${{ github.event.pull_request.head.sha }}
-
-  # Run your tests here ...
-
-  - name: Report test-coverage to DeepSource
-    run: |
-      # Install the CLI
-      curl https://deepsource.io/cli | sh
-
-      # Send the report to DeepSource
-      ./bin/deepsource report --analyzer test-coverage --key <language> --value-file <path/to/coverage/file>
-```
-
-If you want to continue using the Test coverage action, please add a step before the test coverage action, to add a
-`safe.directory` parameter to your `.gitconfig`:
-
-```yaml
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v2
-    with:
-      fetch-depth: 50
-      ref: ${{ github.event.pull_request.head.sha }}
-
-  # ADD THIS STEP
-  - name: Add git safe.directory for container
-    run: |
-      mkdir -p /home/runner/work/_temp/_github_home
-      printf "[safe]\ndirectory = /github/workspace" > /home/runner/work/_temp/_github_home/.gitconfig
-
-  - name: Report test-coverage to DeepSource
-    uses: deepsourcelabs/test-coverage-action@master
-    with:
-      ... The rest of your config is explained in Usage section.
-```
-
-Read this [Discuss post](https://discuss.deepsource.io/t/breaking-deepsource-test-coverage-github-action/507) for more information.
 
 ## Usage
 
