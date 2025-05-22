@@ -11,6 +11,7 @@ INPUT_KEYS_MAP = {
     "dsn": "INPUT_DSN",
     "fail_ci_on_error": "INPUT_FAIL-CI-ON-ERROR",
     "commit_sha": "INPUT_COMMIT-SHA",
+    "use_oidc": "INPUT_USE-OIDC",
 }
 
 DEEPSOURCE_CLI_PATH = "/app/bin/deepsource"
@@ -54,6 +55,9 @@ def main() -> None:
         input_data["coverage_file"],
     ]
 
+    if input_data["use_oidc"] == "true":
+        command.append("--use-oidc")
+
     # change the current working directory to the GitHub repository's context
     os.chdir(GITHUB_WORKSPACE_PATH)
 
@@ -68,10 +72,9 @@ def main() -> None:
         capture_output=True,
     )
 
-    if process.returncode != 0:
-        if input_data["fail_ci_on_error"] == "true":
-            print(f"::error file:main.py::{process.stdout.decode('utf-8')}")
-            sys.exit(1)
+    if process.returncode != 0 and input_data["fail_ci_on_error"] == "true":
+        print(f"::error file:main.py::{process.stdout.decode('utf-8')}")
+        sys.exit(1)
 
     print(process.stdout.decode("utf-8"))
     print(process.stderr.decode("utf-8"), file=sys.stderr)
