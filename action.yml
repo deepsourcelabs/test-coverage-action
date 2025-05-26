@@ -21,7 +21,7 @@ inputs:
   use-oidc:
     description: 'Use OIDC token instead of DSN. Allowed values are — true, false'
     required: false
-    default: false
+    default: 'false'
 branding:
   color: 'green'
   icon: 'umbrella'
