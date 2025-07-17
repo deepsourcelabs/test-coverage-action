@@ -18,6 +18,10 @@ inputs:
     description: 'HEAD commit for which the Test Coverage report is being sent'
     required: false
     default: ${{ github.event.pull_request.head.sha }}
+  use-oidc:
+    description: 'Use OIDC token instead of DSN. Allowed values are — true, false'
+    required: false
+    default: 'false'
 branding:
   color: 'green'
   icon: 'umbrella'
