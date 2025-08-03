@@ -1,7 +1,7 @@
-FROM python:3.9.23-slim-bookworm
-ENV PYTHONPATH /app
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
+FROM python:3.11.13-slim-bookworm
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
 RUN groupadd --gid 5000 main \
     && useradd --home-dir /home/main --create-home --uid 5000 \
